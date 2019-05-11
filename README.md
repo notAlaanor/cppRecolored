@@ -27,11 +27,11 @@ Expect this extension to become obsolete when either an API for VSCode semantic 
 
 _Can I use a compilation database to provide flags?_
 
-Yes, in fact C++ Recolored automatically looks for compile_commands.json in build/ directory of your project (this directory can be changed in the settings).
+Yes, in fact C++ Recolored automatically looks for `compile_commands.json` in build/ directory of your project (this directory can be changed in the settings).
 
 _Can I manually provide flags?_
 
-Yes, in the case where C++ Recolored cannot find compile_commands.json in the specified directory, it will use fallback flags (`cppRecolored.fallbackFlags`) instead, which can be project specific by using the workspace `settings.json`.
+Yes, in the case where C++ Recolored cannot find `compile_commands.json` in the specified directory, it will use fallback flags (`cppRecolored.fallbackFlags`) instead, which can be project specific by using the workspace `settings.json`.
 
 _Why aren't header files being highlighted?_
 
