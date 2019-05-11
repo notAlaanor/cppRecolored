@@ -9,6 +9,7 @@ export class ClangServer extends EventEmitter {
   public server: http.Server = http.createServer();
   public io: SocketIO.Server;
   public fallbackFlags: string[] = [];
+  // @ts-ignore
   private client: child_process.ChildProcess;
 
   public callback: (

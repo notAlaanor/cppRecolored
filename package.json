@@ -2,6 +2,7 @@
   "name": "cpp-recolored",
   "displayName": "C++ Recolored",
   "description": "An upgrade for the C++ syntax coloring",
+  "publisher": "kepler0",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.33.0"
