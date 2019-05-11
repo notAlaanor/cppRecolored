@@ -31,7 +31,7 @@ Yes, in fact C++ Recolored automatically looks for compile_commands.json in buil
 
 _Can I manually provide flags?_
 
-Yes, in the case where C++ Recolored cannot find compile_commands.json in the specified directory, it will use fallback flags (`cppRecolored.fallbackFlags`) instead, which can be project specific by using the workspace settings.json.
+Yes, in the case where C++ Recolored cannot find compile_commands.json in the specified directory, it will use fallback flags (`cppRecolored.fallbackFlags`) instead, which can be project specific by using the workspace `settings.json`.
 
 _Why aren't header files being highlighted?_
 
