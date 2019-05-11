@@ -4,11 +4,11 @@ Clang highlighter for C++
 
 **Before**
 
-![before](https://github.com/notAlaanor/cppRecolored/.media/before.png "Without C++ Recolored")
+![before](https://raw.githubusercontent.com/notAlaanor/cppRecolored/master/.media/before.png "Without C++ Recolored")
 
 **After**
 
-![after](https://github.com/notAlaanor/cppRecolored/.media/after.png "With C++ Recolored")
+![after](https://raw.githubusercontent.com/notAlaanor/cppRecolored/master/.media/after.png "With C++ Recolored")
 
 ## Requirements
 

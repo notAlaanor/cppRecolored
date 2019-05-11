@@ -25,7 +25,11 @@
     "theme": "dark",
     "color": "#000000"
   },
-  "icon": "https://github.com/notAlaanor/cppRecolored/.media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notAlaanor/cppRecolored"
+  },
+  "icon": ".media/icon.png",
   "main": "./out/extension",
   "contributes": {
     "commands": [
