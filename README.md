@@ -27,7 +27,7 @@ Expect this extension to become obsolete when either an API for VSCode semantic 
 
 _Can I use a compilation database to provide flags?_
 
-Yes, in fact C++ Recolored automatically looks for `compile_commands.json` in build/ directory of your project (this directory can be changed in the settings).
+Yes, in fact C++ Recolored automatically looks for `compile_commands.json` in the `build` directory of your project (this directory can be changed in the settings).
 
 _Can I manually provide flags?_
 
