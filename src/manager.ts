@@ -72,7 +72,9 @@ export class Manager {
       this.server.request(
         vscode.window.activeTextEditor.document.fileName,
         ignoreCache,
-        fs.existsSync(possibleCdbPath) ? possibleCdbPath : undefined
+        fs.existsSync(possibleCdbPath + "/compile_commands.json")
+          ? possibleCdbPath
+          : undefined
       );
     }
   }
