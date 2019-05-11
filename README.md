@@ -12,8 +12,8 @@ Clang highlighter for C++
 
 ## Requirements
 
-Python 3
-LLVM
+- Python 3
+- LLVM
 
 ## Setup
 
