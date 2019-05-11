@@ -35,7 +35,7 @@ Yes, in the case where C++ Recolored cannot find compile_commands.json in the sp
 
 _Why aren't header files being highlighted?_
 
-This is usually because of one of two reasons. Either the file extension is seen as a C header by libclang (e.g. files ending in .h), or the header file is not defined in the compilation_database.json and there are no fallback flags specified.
+This is usually because of one of two reasons. Either the file extension is seen as a C header by libclang (e.g. files ending in `.h`), or the header file is not defined in the `compilation_database.json` and there are no fallback flags specified.
 
 _Why isn't it instant?_
 
