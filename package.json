@@ -1,0 +1,103 @@
+{
+  "name": "cpp-recolored",
+  "displayName": "C++ Recolored",
+  "description": "An upgrade for the C++ syntax coloring",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.33.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes"
+  ],
+  "activationEvents": [
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:objective-c",
+    "onLanguage:objective-cpp"
+  ],
+  "keywords": [
+    "c++",
+    "highlighting",
+    "clang"
+  ],
+  "galleryBanner": {
+    "theme": "dark",
+    "color": "#000000"
+  },
+  "icon": "https://github.com/notAlaanor/cppRecolored/.media/icon.png",
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "title": "Update",
+        "category": "C++ Recolored",
+        "command": "cppRecolored.update"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "C++ Recolored",
+        "properties": {
+          "cppRecolored.port": {
+            "type": "number",
+            "default": 9999,
+            "description": "Port to host (localhost) Clang server on."
+          },
+          "cppRecolored.maxCacheSize": {
+            "type": "number",
+            "default": 3,
+            "description": "Maximum number of files to cache the flags of (only applies to projects using a compilation database)"
+          },
+          "cppRecolored.pythonExecutable": {
+            "type": "string",
+            "default": "python3",
+            "description": "Command used to execute Python 3 (must be version >3)."
+          },
+          "cppRecolored.compilationDatabaseDirectory": {
+            "type": "string",
+            "default": "build",
+            "description": "Directory where compilation database might be available relative to project root."
+          },
+          "cppRecolored.fallbackFlags": {
+            "type": "array",
+            "default": [],
+            "items": {
+              "type": "string",
+              "title": "fallbackFlag"
+            },
+            "description": "Fallback flags if compilation database can't be found."
+          },
+          "cppRecolored.typeColor": {
+            "type": "string",
+            "default": "#f75742",
+            "description": "Color used to highlight types."
+          },
+          "cppRecolored.libclangPath": {
+            "type": "string",
+            "default": "",
+            "description": "Absolute path to libclang library (e.g. C:/Program Files (x86)/LLVM/bin/libclang.dll)"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^3.1.4",
+    "vscode": "^1.1.25",
+    "tslint": "^5.8.0",
+    "@types/node": "^8.10.25",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "@types/socket.io": "^2.1.2",
+    "socketio": "^1.0.0"
+  }
+}

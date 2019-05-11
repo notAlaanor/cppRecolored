@@ -1,0 +1,11 @@
+out
+node_modules
+.vscode-test/
+*.vsix
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+*.egg
+.vscode/
+.vscodeignore
