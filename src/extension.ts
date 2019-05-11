@@ -9,7 +9,7 @@ export var delay: NodeJS.Timer;
 export async function activate(context: vscode.ExtensionContext) {
   mgr = new Manager(
     vscode.window.activeTextEditor!.document.fileName,
-    context.asAbsolutePath("src/python/recolored/clang.py")
+    context.asAbsolutePath("python/recolored/clang.py")
   );
 
   setTimeout(function() {
