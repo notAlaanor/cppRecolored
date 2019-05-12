@@ -22,6 +22,8 @@ export class Manager {
       this.rangesCallback.bind(this)
     );
 
+    this.server.fallbackFlags = config.get<string[]>("fallbackFlags")!;
+
     this.file = new File();
 
     this.decoration = this.decorationType();

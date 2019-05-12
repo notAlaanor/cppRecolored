@@ -66,7 +66,11 @@
           },
           "cppRecolored.fallbackFlags": {
             "type": "array",
-            "default": [],
+            "default": [
+              "-x",
+              "c++",
+              "-std=c++11"
+            ],
             "items": {
               "type": "string",
               "title": "fallbackFlag"

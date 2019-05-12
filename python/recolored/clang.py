@@ -90,14 +90,14 @@ class TranslationUnit():
     filename = ""
     flags = []
 
-    def __init__(self, filename, use_cdb, cdb_path):
+    def __init__(self, filename, use_cdb, cdb_path, fallback_flags, use_fallback_flags):
         global cdb
         if use_cdb:
             if cdb == None:
                 cdb = CompilationDatabase(cdb_path)
-
-        if use_cdb and cdb != None:
             self.flags = cdb.get_flags(filename)
+        elif use_fallback_flags:
+            self.flags = fallback_flags
 
         try:
             self.tu = self.index.parse(
@@ -146,9 +146,7 @@ class ClangFile:
 
     def reset(self):
         self.tu = TranslationUnit(
-            self.filename, self.has_cdb, self.cdb_path)
-        if self.use_fallback_flags:
-            self.tu.flags = self.fallback_flags
+            self.filename, self.has_cdb, self.cdb_path, self.fallback_flags if self.use_fallback_flags else [], self.use_fallback_flags)
 
     def types(self):
         types = self.tu.get_types()
@@ -187,7 +185,7 @@ def on_parse(data):
         cdb_path = data["cdbPath"]
         ignore_cache = data["ignoreCache"]
         fallback_flags = data["fallbackFlags"]
-        if file.filename == filename and file.has_cdb == use_cdb and file.cdb_path == cdb_path:
+        if file.filename == filename and file.has_cdb == use_cdb and file.cdb_path == cdb_path and file.fallback_flags == fallback_flags:
             global use_cache_if_possible
             use_cache_if_possible = not ignore_cache
             file.parse()
