@@ -17,7 +17,9 @@ Clang highlighter for C++
 
 ## Setup
 
-After installing, simply go to the settings and change C++ Recolored > Libclang Path (`cppRecolored.libclangPath`) to the path to the LLVM dynamic library on your system (`libclang.dll/so/dylib`).
+After installing, simply go to the settings and change C++ Recolored > Libclang Path (`cppRecolored.libclangPath`) to the path to the LLVM dynamic library on your system (`libclang.dll/so/dylib`). Note on Windows; this should be LLVM 32-bit.
+
+It is also recommended that you change the highlighting color to match your theme (C++ Recolored > Type Color or `cppRecolored.typeColor`).
 
 ## Note
 
@@ -35,7 +37,9 @@ Yes, in the case where C++ Recolored cannot find `compile_commands.json` in the 
 
 _Why aren't header files being highlighted?_
 
-This is usually because the header file is not defined in the `compilation_database.json` and there are no fallback flags specified. More specifically, if the header file ends in `.h` and `cppRecolored.fallbackFlags` does not contain `["-x", "c++"]`, it will be treated as a C header.
+Make sure you're using the latest version of LLVM (which adds the functionality of automatically finding corresponding header file flags in a compilation database).
+
+IF you're using an older version of LLVM; this is usually because the header file is not defined in the `compilation_database.json` and there are no fallback flags specified. More specifically, if the header file ends in `.h` and `cppRecolored.fallbackFlags` does not contain `["-x", "c++"]`, it will be treated as a C header.
 
 _Why isn't it instant?_
 

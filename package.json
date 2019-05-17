@@ -79,7 +79,7 @@
           },
           "cppRecolored.typeColor": {
             "type": "string",
-            "default": "#f75742",
+            "default": "#4ec9b0",
             "description": "Color used to highlight types."
           },
           "cppRecolored.libclangPath": {

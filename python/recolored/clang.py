@@ -54,6 +54,8 @@ class CompilationDatabase():
         flags = []
         commands = self.comp_db.getCompileCommands(source_file)
 
+        # this is almost always a branch of execution for header files, but LLVM 8.0.0 seems to have the ability to implicitly find corresponding flags for header files??
+        # thanks LLVM :)
         if commands == None:
             global file
             return file.fallback_flags
@@ -62,7 +64,6 @@ class CompilationDatabase():
             wd = command.directory
             args = command.arguments
             for arg in args:
-                # skip first as it is always the compiler executable
                 str_arg = str(arg)
 
                 if str_arg.startswith("-I"):
@@ -73,8 +74,13 @@ class CompilationDatabase():
 
                 flags.append(str_arg)
 
+        # skip first & last as they are compiler executable and filename, respectively
         flags = flags[1:]
         flags.pop()
+
+        # as mentioned above, LLVM seems to be able to find flags automatically, but header files ending in .h are still considered C files, so just pass these two flags to make sure
+        flags.append("-x")
+        flags.append("c++")
 
         self.cached[source_file] = flags
 
