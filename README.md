@@ -1,5 +1,8 @@
 # C++ Recolored
 
+# Note
+This extension is now obsolete and won't be maintained. The C/C++ extension has implemented a more stable and faster semantic highlighter (as of June available in C/C++ Insiders update channel). I hope that people still found this extension useful in the meantime. :)
+
 Clang highlighter for C++
 
 **Before**
